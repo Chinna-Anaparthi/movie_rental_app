@@ -1,0 +1,56 @@
+.center {
+  text-align: center;
+  margin-top: 20% !important;
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  margin-right: 10px;
+}
+
+.genre-select {
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #3498db;
+  color: #fff;
+  &:hover {
+    background-color: #2980b9;
+  }
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 300px;
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.btn-rent {
+  background-color: #2ecc71;
+  color: #fff;
+  &:hover {
+    background-color: #27ae60;
+  }
+}
