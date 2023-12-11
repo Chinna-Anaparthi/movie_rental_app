@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css"; // Import your CSS file
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import "./Login.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -63,57 +64,61 @@ const Login = () => {
   };
 
   return (
-    <form className="loginForm">
-      <h1 className="heading">Login</h1>
+    <div className="image">
+      <form className="loginForm">
+        <h1 className="heading">Login</h1>
 
-      <div className="form-group">
-        <label>Username</label>
-        <input
-          type="text"
-          name="username"
-          value={credentials.username}
-          onChange={handleChange}
-          className="form-control"
-        />
-        {/* <div className="alert alert-danger">{errors.username}</div> */}
-      </div>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={credentials.username}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
 
-      <div className="form-group">
-        <label>E-Mail</label>
-        <input
-          type="text"
-          name="email"
-          value={credentials.email}
-          onChange={handleChange}
-          className="form-control"
-        />
-        {/* <div className="alert alert-danger">{errors.email}</div> */}
-      </div>
+        <div className="form-group">
+          <label>E-Mail</label>
+          <input
+            type="text"
+            name="email"
+            value={credentials.email}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={credentials.password}
-          onChange={handleChange}
-          className="form-control"
-        />
-        {/* <div className="alert alert-danger">{errors.password}</div> */}
-      </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={credentials.password}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
 
-      <br />
-      <button
-        type="button"
-        className="btn btn-primary button"
-        onClick={handleLogin}
-      >
-        Login
-      </button>
-      <button type="button" className="btn btn-danger button">
-        Cancel
-      </button>
-    </form>
+        
+        <button
+          type="button"
+          className="btn btn-primary button"
+          onClick={handleLogin}
+        >
+          Login
+        </button><span>
+        <button type="button" className="btn btn-danger button">
+          Cancel
+        </button></span>
+
+        <p className="navigate">
+          Don't have login credentials?{" "}
+          <Link to="/">Register here</Link>.
+        </p>
+      </form>
+    </div>
   );
 };
 
