@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Card, CardContent, TextField, Button, Typography } from '@mui/material';
 import './AddPayment.css';
 
 const AddPayment = () => {
@@ -32,78 +33,78 @@ const AddPayment = () => {
   };
 
   return (
-    <div>
-      <h2>Add Payment</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="RentalId">Rental ID:</label>
-          <input
+    <Card className="payment-card">
+      <CardContent>
+        <Typography variant="h5" component="div">
+          Add Payment
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Rental ID"
             type="number"
-            id="RentalId"
             name="RentalId"
             value={paymentData.RentalId}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <div>
-          <label htmlFor="CardNumber">Card Number:</label>
-          <input
+          <TextField
+            label="Card Number"
             type="text"
-            id="CardNumber"
             name="CardNumber"
             value={paymentData.CardNumber}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <div>
-          <label htmlFor="ExpiryDate">Expiry Date:</label>
-          <input
+          <TextField
+            label="Expiry Date"
             type="text"
-            id="ExpiryDate"
             name="ExpiryDate"
             value={paymentData.ExpiryDate}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <div>
-          <label htmlFor="CVV">CVV:</label>
-          <input
+          <TextField
+            label="CVV"
             type="text"
-            id="CVV"
             name="CVV"
             value={paymentData.CVV}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <div>
-          <label htmlFor="PaymentAmount">Payment Amount:</label>
-          <input
+          <TextField
+            label="Payment Amount"
             type="number"
-            id="PaymentAmount"
             name="PaymentAmount"
             value={paymentData.PaymentAmount}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <div>
-          <label htmlFor="PaymentDate">Payment Date:</label>
-          <input
+          <TextField
+            label="Payment Date"
             type="date"
-            id="PaymentDate"
             name="PaymentDate"
             value={paymentData.PaymentDate}
             onChange={handleInputChange}
+            fullWidth
+            margin="normal"
           />
-        </div>
 
-        <button type="submit">Add Payment</button>
-      </form>
-    </div>
+          <Button type="submit" variant="contained" color="primary">
+            Add Payment
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 
